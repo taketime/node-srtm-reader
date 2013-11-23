@@ -17,7 +17,7 @@ fs.readFile(hgtPath, function(err, data) {
             heights[currentRow].push(data.readInt16BE(i));
         if (i > 0 && i % totalRows === 0) {
             currentRow++;
-            heights[currentRow] = []
+            heights[currentRow] = [];
         }
         if (i === data.length - 1) {
             fs.writeFile("heights.json", JSON.stringify(heights), function(err) {
