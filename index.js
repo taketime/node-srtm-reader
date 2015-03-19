@@ -11,7 +11,7 @@ heights[currentRow] = [];
 
 fs.readFile(hgtPath, function(err, data) {
     if (err) console.warn(err);
-    var totalRows = Math.sqrt(data.length / 2);
+    var totalRows = Math.sqrt(data.length / 2) * 2;
     for (var i = 0; i < data.length; i++) {
         if (i % 2 === 0)
             heights[currentRow].push(data.readInt16BE(i));
